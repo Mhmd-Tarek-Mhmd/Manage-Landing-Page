@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+  head
+    include layouts/_meta
+    link(rel="shortcut icon", href="images/favicon-32x32.png", type="image/png", sizes="32x32")
+    title Frontend Mentor | Manage landing page
+    include layouts/_styles
+  body
+    // Header area
+    header.text-mobile-center.overflow
+      .container
+        //- Nav area
+        include layouts/_nav
+
+        //- Header Content area
+        .header-content.d-mobile-block.center-between-flex
+          .image.p-relative
+            img(
+              src="images/bg-tablet-pattern.svg",
+              alt="",
+              class="tablet-pattern p-absolute"
+            )
+            img(
+              src="images/illustration-intro.svg",
+              alt="",
+              class="illustration-intro m-auto"
+            )
+
+          .text
+            h1 Bring everyone together to build better products.
+            p Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in view.
+            button.btn Get Started
+
+    script
+      include ../js/dist/index.js

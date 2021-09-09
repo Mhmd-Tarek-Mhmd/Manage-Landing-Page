@@ -1,1 +1,71 @@
+// ------ Visibility ------
+.hide
+  display: none !important
+.mobile-hide
+  @media (max-width: $breakPoint)
+    display: none !important
 
+// ------ Overflow ------
+.overflow
+  overflow: hidden
+
+// ------ Flex ------
+.d-flex
+  display: flex
+.d-mobile-flex
+  @media (max-width: $breakPoint)
+    display: flex
+
+.justify-space-between
+  justify-content: space-between
+.justify-mobile-center
+  @media (max-width: $breakPoint)
+    justify-content: space-between
+
+.align-items-center
+  align-items: center
+.align-items-mobile-center
+  @media (max-width: $breakPoint)
+    align-items: center
+
+// ------ Position ------
+.p-relative
+  position: relative
+.p-absolute
+  position: absolute
+.p-fixed
+  position: fixed
+
+// ------ Display ------
+.d-block
+  display: block !important
+.d-mobile-block
+  @media (max-width: $breakPoint)
+    display: block !important
+
+// ------ Aligment ------
+
+// [1] Text
+.text-center
+  text-align: center
+.text-mobile-center
+  @media (max-width: $breakPoint)
+    text-align: center
+
+// [2] Margin
+.m-auto
+  margin: auto
+.m-mobile-auto
+  @media (max-width: $breakPoint)
+    margin: auto
+
+// [3] Flex
+.center-between-flex
+  display: flex
+  justify-content: space-between
+  align-items: center
+.center-between-mobile-flex
+  @media (max-width: $breakPoint)
+    display: flex
+    justify-content: space-between
+    align-items: center

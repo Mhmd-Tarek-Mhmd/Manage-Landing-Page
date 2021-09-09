@@ -1,1 +1,39 @@
+/* Global style */
+@import helpers/variables
+@import helpers/global
 
+/* Grid style */
+@import helpers/grid
+
+/* Utilities style */
+@import helpers/Utilities
+
+/* Componetns style */
+@import components/btn
+
+/* Header style */
+header
+  .header-content > div
+    @media (min-width: $breakPoint + 1)
+      width: 48%
+
+  // [1] Nav
+  @import layouts/nav
+
+  // [2] Text
+  .text
+    h1
+      color: $titleColor
+      font-size: 40px
+    p
+      margin-bottom: 30px
+
+  // [3] Image
+  .image
+    z-index: -2
+    @media (min-width: $breakPoint + 1)
+      order: 1
+
+    .tablet-pattern
+      transform: scale(1.4) translate(22%, -40%)
+      z-index: -1
