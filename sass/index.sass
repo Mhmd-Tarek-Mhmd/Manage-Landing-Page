@@ -37,3 +37,39 @@ header
     .tablet-pattern
       transform: scale(1.4) translate(22%, -40%)
       z-index: -1
+
+/* Why Manage section */
+.why-manage
+  overflow-x: clip
+  .container > div
+    @media (min-width: $breakPoint + 1)
+      width: 48%
+
+  h2, h4
+    color: $titleColor
+
+  h4
+    display: flex
+    align-items: center
+    @media (max-width: $breakPoint)
+      background-color: hsl(13, 100%, 96%)
+      border-top-left-radius: 25px
+      border-bottom-left-radius: 25px
+      width: calc(100% + 30px)
+    span.num
+      margin-right: 10px
+      background-color: $primaryColor
+      color: #fff
+      border-radius: 25px
+      padding: 10px 25px
+
+  p
+    margin-bottom: 50px
+
+  img
+    z-index: -1
+    top: -500px
+    right: -60%
+    @media (max-width: 500px)
+      top: -360px
+      right: -65%

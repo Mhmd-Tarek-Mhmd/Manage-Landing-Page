@@ -31,5 +31,25 @@ html(lang="en")
             p Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in view.
             button.btn Get Started
 
+    // Why Manage section
+    section.why-manage
+      .container.d-mobile-block.d-flex.justify-space-between
+        div.text-mobile-center.p-relative
+          h2 What’s different about Manage?
+          p Manage provides all the functionality your team needs, without the complexity. Our software is tailor-made for modern digital product teams.
+          img(
+            src="images/bg-tablet-pattern.svg",
+            alt="",
+            class="hide d-mobile-block p-absolute"
+          )
+
+        div
+          - const titles = ["Track company-wide progress", "Advanced built-in reports", "Everything you need in one place"]
+          - const paragraphs = ["See how your day-to-day tasks fit into the wider vision. Go from tracking progress at the milestone level all the way done to the smallest of details. Never lose sight of the bigger picture again.", "Set internal delivery estimates and track progress toward company goals. Our customisable dashboard helps you build out the reports you need to keep key stakeholders informed.", "Stop jumping from one service to another to communicate, store files, track tasks and share documents. Manage offers an all-in-one team productivity solution."]
+          each title, i in titles
+            .box
+              h4 #[span.num 0#{i+1}] #[span= title]
+              p= paragraphs[i]
+
     script
       include ../js/dist/index.js
