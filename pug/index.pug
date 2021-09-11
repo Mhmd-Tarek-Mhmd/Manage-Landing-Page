@@ -57,5 +57,22 @@ html(lang="en")
       include components/_slider
       button.btn Get Started
 
+    // Simplify section
+    section.simplify.text-mobile-center.p-relative.overflow
+      .container
+        img.mobile(
+          src="images/bg-simplify-section-mobile.svg",
+          alt="",
+          class="hide d-mobile-block p-absolute"
+        )
+        img.screen(
+          src="images/bg-simplify-section-desktop.svg",
+          alt="",
+          class="mobile-hide p-absolute"
+        )
+        .simplify-content.d-flex.justify-space-between.align-items-center.d-mobile-block
+          h2 Simplify how your team works today.
+          button.btn.reverse Get Started
+
     script
       include ../js/dist/index.js
