@@ -51,5 +51,11 @@ html(lang="en")
               h4 #[span.num 0#{i+1}] #[span= title]
               p= paragraphs[i]
 
+    // They Said section
+    section.they-said.text-center.overflow.p-relative
+      h2 What they’ve said?
+      include components/_slider
+      button.btn Get Started
+
     script
       include ../js/dist/index.js

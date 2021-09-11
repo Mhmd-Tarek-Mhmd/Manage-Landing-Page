@@ -1,0 +1,35 @@
+.cards
+  margin: 80px 0 20px
+  @media (min-width: $breakPoint + 1)
+    width: 200%
+  @media (max-width: $breakPoint)
+    width: 400%
+  .card
+    background-color: hsl(0, 0%, 98%)
+    padding: 35px 0px 15px
+    width: 24%
+    margin: auto
+    @media (min-width: $breakPoint + 1)
+      transform: translateX(-53%)
+
+    img
+      width: 70px
+      height: 70px
+      top: -35px
+      left: 50%
+      transform: translateX(-50%)
+
+    blockquote
+      color: $textColor
+
+.indicators
+  span
+    width: 10px
+    height: 10px
+    border: 1px solid $primaryColor
+    border-radius: 50%
+    cursor: pointer
+    &.active
+      background-color: $primaryColor
+  span:nth-child(even)
+    margin: 0 5px

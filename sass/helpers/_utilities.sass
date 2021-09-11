@@ -14,13 +14,19 @@
   display: flex
 .d-mobile-flex
   @media (max-width: $breakPoint)
-    display: flex
+    display: flex !important
 
 .justify-space-between
   justify-content: space-between
-.justify-mobile-center
+.justify-mobile-space-between
   @media (max-width: $breakPoint)
     justify-content: space-between
+
+.justify-center
+  justify-content: center
+.justify-mobile-center
+  @media (max-width: $breakPoint)
+    justify-content: center
 
 .align-items-center
   align-items: center

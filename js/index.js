@@ -5,17 +5,21 @@
  */
 
 function addClass(target, className) {
-  document.querySelector(target).classList.add(className);
+  typeof target === "string"
+    ? document.querySelector(target).classList.add(className)
+    : target.classList.add(className);
 }
 function removeClass(target, className) {
-  document.querySelector(target).classList.remove(className);
+  typeof target === "string"
+    ? document.querySelector(target).classList.remove(className)
+    : target.classList.remove(className);
 }
 
-function hide(target) {
-  addClass(target, "hide");
+function hide(target, className = "hide") {
+  addClass(target, className);
 }
-function show(target) {
-  removeClass(target, "hide");
+function show(target, className = "hide") {
+  removeClass(target, className);
 }
 
 /**
@@ -24,7 +28,7 @@ function show(target) {
  *
  */
 
-document.querySelector("#mobile-btn").addEventListener("click", (e) => {
+document.querySelector("#mobile-btn").addEventListener("click", () => {
   addClass("nav ul", "mobile-list");
   hide("#mobile-btn");
   show("#close-btn");
@@ -35,4 +39,44 @@ document.querySelector("#close-btn").addEventListener("click", () => {
   hide("#close-btn");
   show("#mobile-btn");
   removeClass("body", "overflow");
+});
+
+/**
+ *
+ * Slider Logic
+ *
+ */
+
+// Global Variables
+const indicators = document.querySelectorAll(".slider .indicators span"),
+  cards = document.querySelectorAll(".slider .cards .card"),
+  orders = [
+    [0, 1, 2, 3],
+    [3, 0, 1, 2],
+    [2, 3, 0, 1],
+    [1, 2, 3, 0],
+  ],
+  order = (target, num, i) => {
+    target.style.order = orders[num][i];
+    indicators.forEach((ele) => removeClass(ele, "active"));
+    addClass(indicators[num], "active");
+  };
+
+// Infinite Slider
+cards.forEach((card, i) => {
+  const duration = 3000;
+
+  setInterval(() => {
+    order(card, 0, i);
+    setTimeout(() => order(card, 1, i), duration);
+    setTimeout(() => order(card, 2, i), duration * 2);
+    setTimeout(() => order(card, 3, i), duration * 3);
+  }, duration * 4);
+});
+
+// Mobile Indicators
+indicators.forEach((indicator, ind) => {
+  indicator.addEventListener("click", () =>
+    cards.forEach((card, i) => order(card, ind, i))
+  );
 });
