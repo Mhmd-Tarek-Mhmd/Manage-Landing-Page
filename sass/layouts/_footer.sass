@@ -1,0 +1,53 @@
+footer
+  padding-top: 25px
+  background-color: hsl(233, 12%, 13%)
+  color: $textColor
+  .footer-content > *
+    padding: 10px 0
+  .btn
+    box-shadow: none
+    @media (max-width:  $breakPoint)
+      margin: initial
+
+  .last-col
+    flex-direction: column
+    order: 1
+    .copyrights
+      align-self: flex-end
+
+    form
+      align-items: baseline
+      flex-wrap: wrap
+      align-self: flex-end
+      @media (min-width:  $breakPoint + 1)
+        margin-bottom: 25px
+
+    input[type="email"]
+      padding: 15px 20px
+      border-radius: 20px
+      border: none
+      margin-bottom: 15px
+      margin-right: 15px
+      &:focus
+        outline: none
+
+  .first-col
+    flex-direction: column-reverse
+    order: -1
+    @media (min-width:  $breakPoint + 1)
+      width: 30%
+    .social
+      align-self: flex-start
+      @media (max-width:  $breakPoint)
+        margin-bottom: 15px
+      a
+        min-width: initial
+        &:nth-child(even)
+          margin: 0 15px
+
+  .links li
+    padding: 10px 30px
+    a
+      color: $textColor
+      &:hover
+        color: $primaryColor
