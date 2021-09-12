@@ -2,8 +2,7 @@ doctype html
 html(lang="en")
   head
     include layouts/_meta
-    link(rel="shortcut icon", href="images/favicon-32x32.png", type="image/png", sizes="32x32")
-    title Frontend Mentor | Manage landing page
+    title Manage landing page | Frontend Mentor
     include layouts/_styles
   body
     // Header area
@@ -26,13 +25,18 @@ html(lang="en")
               class="illustration-intro m-auto"
             )
 
-          .text
+          .text.p-relative
             h1 Bring everyone together to build better products.
             p Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in view.
             button.btn Get Started
+            img(
+              src="images/bg-tablet-pattern.svg",
+              alt="",
+              class="hide d-mobile-block p-absolute"
+            )
 
     // Why Manage section
-    section.why-manage
+    section.why-manage.overflow
       .container.d-mobile-block.d-flex.justify-space-between
         div.text-mobile-center.p-relative
           h2 What’s different about Manage?
@@ -40,7 +44,7 @@ html(lang="en")
           img(
             src="images/bg-tablet-pattern.svg",
             alt="",
-            class="hide d-mobile-block p-absolute"
+            class="mobile-hide p-absolute"
           )
 
         div
@@ -48,7 +52,7 @@ html(lang="en")
           - const paragraphs = ["See how your day-to-day tasks fit into the wider vision. Go from tracking progress at the milestone level all the way done to the smallest of details. Never lose sight of the bigger picture again.", "Set internal delivery estimates and track progress toward company goals. Our customisable dashboard helps you build out the reports you need to keep key stakeholders informed.", "Stop jumping from one service to another to communicate, store files, track tasks and share documents. Manage offers an all-in-one team productivity solution."]
           each title, i in titles
             .box
-              h4 #[span.num 0#{i+1}] #[span= title]
+              h4.d-flex.align-items-center #[span.num 0#{i+1}] #[span= title]
               p= paragraphs[i]
 
     // They Said section
