@@ -4,7 +4,7 @@ This is a solution to the [Manage landing page challenge on Frontend Mentor](htt
 
 ## Links
 
-- Live Site [URL](https://mhmd-tarek-mhmd.github.io/Manage-Landing-Page)
-- Solution [URL](https://www.frontendmentor.io/solutions/manage-landing-page-)
+- Live Site [URL](https://mhmd-tarek-mhmd.github.io/Manage-Landing-Page/dist)
+- Solution [URL](https://www.frontendmentor.io/solutions/manage-landing-page-ryPjSKCMq)
 
 ## Screenshots
