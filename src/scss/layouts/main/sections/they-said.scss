@@ -1,0 +1,124 @@
+.they-said {
+  text-align: center;
+  padding: 75px 0 42px;
+  h2 {
+    font-size: 2em;
+    color: $secondary;
+    margin-bottom: 98px;
+    @media (min-width: 768px) {
+      font-size: 2.3em;
+      margin-bottom: 108px;
+    }
+  }
+  .slide {
+    height: 220px;
+    position: relative;
+    padding: 60px 0 42px;
+    background-color: hsl(0, 0%, 98%);
+    img {
+      left: 50%;
+      top: -40px;
+      position: absolute;
+      transform: translateX(-50%);
+    }
+    .txt {
+      gap: 22px;
+      h3 {
+        font-size: 1em;
+      }
+      p {
+        width: 81%;
+        margin: 0 auto;
+        @media (min-width: 768px) {
+          width: 84.5%;
+        }
+      }
+    }
+  }
+  .btn {
+    margin: auto;
+    @media (min-width: 768px) {
+      margin-top: 68px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    overflow: hidden;
+    padding: 140px 0 180px;
+
+    .slider {
+      height: 200px;
+      position: relative;
+
+      .slides {
+        inset: 0 0 0 0;
+        position: absolute;
+        gap: 30px;
+        display: grid;
+        will-change: transform;
+        grid-template-columns: repeat(auto-fill, 540px);
+        width: calc(540px * var(--n) + 30px * calc(var(--n) - 1));
+        animation: sliderMoving calc(var(--n) * 4s) linear infinite;
+        &:first-child {
+          margin-left: -22px;
+        }
+        &.clone {
+          animation-name: sliderMovingClone;
+          transform: translateX(calc(100% + 30px));
+        }
+      }
+
+      @keyframes sliderMoving {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+      @keyframes sliderMovingClone {
+        from {
+          transform: translateX(calc(100% + 30px));
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .slides.clone {
+      display: none;
+    }
+
+    .slide {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+
+    .dots {
+      gap: 4px;
+      margin: 24px 0 46px;
+      button {
+        width: 8px;
+        height: 8px;
+        outline: none;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 1px solid $primary;
+        will-change: background-color;
+        &:focus-visible,
+        &:hover,
+        &.active {
+          background-color: $primary;
+        }
+      }
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+}

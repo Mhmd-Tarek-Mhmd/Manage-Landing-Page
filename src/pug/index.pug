@@ -1,0 +1,20 @@
+include components/mixins/import
+
+doctype html
+html(lang="en")
+  head
+    include components/meta
+    title Manage landing page
+    include components/links
+  body
+    // Header area
+    include layouts/header/import
+
+    // Main area
+    include layouts/main/import
+
+    // Footer area
+    include layouts/footer
+
+    script
+      include ../js/dist/index.js

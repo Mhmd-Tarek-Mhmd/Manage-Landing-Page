@@ -1,0 +1,18 @@
+.txt {
+  display: grid;
+  h1,
+  h2,
+  h3 {
+    color: $secondary;
+  }
+  p {
+    color: $gray;
+    line-height: 1.6;
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 767px) {
+    text-align: center;
+  }
+}

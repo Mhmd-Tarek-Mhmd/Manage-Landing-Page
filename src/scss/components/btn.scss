@@ -1,0 +1,27 @@
+.btn {
+  height: 44px;
+  width: 138px;
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 44px;
+  text-align: center;
+  border-radius: 24px;
+  will-change: opacity;
+  transition: 0.3s opacity;
+
+  &.primary {
+    color: white;
+    background-color: $primary;
+    box-shadow: 0 6px 10px rgba($primary, 0.3);
+  }
+
+  &.reverse {
+    color: $primary;
+    background-color: white;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

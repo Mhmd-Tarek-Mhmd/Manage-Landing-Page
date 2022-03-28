@@ -1,0 +1,25 @@
+section.they-said
+  .container
+    h2 What they’ve said
+
+    .slider
+      - const quotes = ['“Manage has supercharged our team’s workflow. The ability to maintain visibility on larger milestones at all times keeps everyone motivated.”','“We have been able to cancel so many other subscriptions since using Manage. There is no more cross-channel confusion and everyone is much more focused.”','“Manage allows us to provide structure and process. It keeps us organized and focused. I can’t stop recommending them to everyone I talk to!”','“Their software allows us to track, manage and collaborate on our projects from anywhere. It keeps the whole team in-sync without being intrusive.”'];
+      - const names = ['Anisha Li','Ali Bravo','Richard Watts','Shanai Gough'];
+      
+        .slides
+          each name, i in names
+            .slide(class=`${i === 1 ? 'active' : ''}`)
+              img(src=`images/slider/avatar-${name.split(' ')[0].toLowerCase()}.png`, alt=`${name} logo`)
+              +txt('h3', name, quotes[i])
+        .slides.clone
+          each name, i in names
+            .slide(class=`${i === 1 ? 'active' : ''}`)
+              img(src=`images/slider/avatar-${name.split(' ')[0].toLowerCase()}.png`, alt=`${name} logo`)
+              +txt('h3', name, quotes[i])
+
+
+      div.dots.center-flex
+        each quote, i in quotes
+          button(aria-label=`slide ${i + 1}`, class=`${i === 1 ? 'active' : ''}`)
+
+    +btn()

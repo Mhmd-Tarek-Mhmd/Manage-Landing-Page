@@ -1,0 +1,140 @@
+.about-us {
+  @media (min-width: 768px) {
+    position: relative;
+  }
+
+  h2 {
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    @media (max-width: 767px) {
+      font-size: 2em;
+    }
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @media (max-width: 767px) {
+      gap: 56px;
+      grid-template-columns: 1fr;
+    }
+
+    & > .txt {
+      gap: 26px;
+      @media (max-width: 767px) {
+        gap: 16px;
+        h2 {
+          font-size: 2em;
+        }
+        p {
+          padding: 0 15px;
+        }
+      }
+      @media (min-width: 768px) {
+        align-self: start;
+      }
+      @media (min-width: 1200px) {
+        p {
+          width: 65%;
+        }
+      }
+    }
+  }
+
+  .pattern {
+    @media (min-width: 768px) {
+      top: 30%;
+      left: -30%;
+      width: 50%;
+      z-index: -1;
+      position: absolute;
+    }
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .advantages {
+    gap: 48px;
+    display: grid;
+    .label {
+      @extend .btn, .primary;
+      width: 66px;
+      height: 40px;
+      cursor: default;
+      box-shadow: none;
+      user-select: none;
+      line-height: 40px;
+      font-size: initial;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .wrapper {
+      gap: 28px;
+      counter-increment: label;
+    }
+    h3 {
+      font-size: 15px;
+      align-self: center;
+      @media (min-width: 992px) {
+        font-size: 1.2em;
+      }
+      &::before {
+        @extend .label;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .label {
+        display: none;
+      }
+      .txt {
+        gap: 12px;
+        text-align: initial;
+      }
+      h3 {
+        gap: 14px;
+        display: grid;
+        position: relative;
+        align-items: center;
+        grid-template-columns: 66px 1fr;
+        &::before {
+          display: inline-block;
+          content: "0" counter(label);
+        }
+        &::after {
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: -16px;
+          content: "";
+          z-index: -1;
+          position: absolute;
+          background-color: #ffefeb;
+          border-top-left-radius: 24px;
+          border-bottom-left-radius: 24px;
+        }
+      }
+    }
+    @media (min-width: 768px) {
+      .wrapper {
+        gap: 28px;
+        display: grid;
+        align-items: baseline;
+        grid-template-columns: 66px 1fr;
+      }
+      .txt {
+        gap: 18px;
+      }
+      h3 {
+        white-space: nowrap;
+      }
+    }
+    @media (min-width: 1200px) {
+      p {
+        width: 95%;
+      }
+    }
+  }
+}

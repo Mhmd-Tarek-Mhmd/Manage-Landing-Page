@@ -1,0 +1,130 @@
+footer {
+  height: 250px;
+  background-color: hsl(233, 12%, 13%);
+  .container {
+    display: grid;
+    @media (max-width: 767px) {
+      gap: 52px;
+      height: 100%;
+    }
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+  }
+
+  a {
+    color: white;
+    will-change: color;
+    &:hover,
+    &:focus-visible {
+      color: $primary;
+    }
+  }
+
+  form {
+    gap: 8px;
+    height: 44px;
+    display: grid;
+    position: relative;
+    grid-template-columns: 3fr 1fr;
+    .btn {
+      height: 100%;
+      width: initial;
+      min-width: 50px;
+      box-shadow: none !important;
+    }
+    input {
+      outline: none;
+      padding-left: 16px;
+      border-radius: 24px;
+      background-color: #fff;
+      &:focus {
+        border: 1px solid $primary;
+      }
+      @media (max-width: 767px) {
+        padding-left: 24px;
+      }
+    }
+    [role="alert"] {
+      display: none;
+      font-size: 14px;
+      position: absolute;
+      top: calc(100% + 5px);
+      @media (max-width: 767px) {
+        left: 16px;
+      }
+    }
+    &.error {
+      color: $primary;
+      [role="alert"] {
+        display: block;
+      }
+    }
+  }
+
+  nav {
+    color: #fff;
+    display: grid;
+    row-gap: 18px;
+    font-size: 14px;
+    grid-template-columns: repeat(2, max-content);
+    @media (max-width: 767px) {
+      margin: auto;
+      max-width: 260px;
+      column-gap: 107px;
+    }
+    @media (min-width: 768px) {
+      justify-content: space-around;
+    }
+  }
+
+  .contacts {
+    display: grid;
+    @media (max-width: 767px) {
+      gap: 39px;
+      text-align: center;
+    }
+  }
+
+  .copyrights {
+    color: $gray;
+    font-size: 12px;
+    align-self: end;
+    @media (max-width: 767px) {
+      justify-self: center;
+    }
+    @media (min-width: 768px) {
+      justify-self: right;
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 767px) {
+    height: 537px;
+    padding: 51px 0 32px;
+    .logo svg {
+      transform: scale(1.1);
+    }
+    .social {
+      gap: 34px;
+      svg {
+        transform: scale(1.6);
+      }
+    }
+    .desktop {
+      display: none;
+    }
+  }
+  @media (min-width: 768px) {
+    display: grid;
+    align-content: center;
+    .social {
+      gap: 14px;
+      align-self: end;
+      justify-self: left;
+    }
+    .mobile {
+      display: none;
+    }
+  }
+}

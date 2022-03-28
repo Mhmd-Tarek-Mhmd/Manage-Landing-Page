@@ -1,0 +1,12 @@
+nav.space-between-flex
+  +logo("#242D52")
+
+  button.links-toggler(aria-label='Show links', onclick="navToggler(event)", aria-controls="menu")
+    img(src="images/icons/icon-hamburger.svg", alt="")
+
+  ul.links.center-flex#menu
+    each link in ['Pricing', 'Product', 'About Us', 'Careers', 'Community']
+      li
+        a(href="/")=link
+
+  +btn()

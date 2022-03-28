@@ -1,0 +1,29 @@
+.simplify {
+  height: 405px;
+  display: grid;
+  align-items: center;
+  background: $primary url(images/bg-simplify-section-mobile.svg) no-repeat
+    center left;
+  @media (min-width: 768px) {
+    height: 220px;
+    background-position: bottom right -250px;
+    background-image: url(images/bg-simplify-section-desktop.svg);
+  }
+
+  .container {
+    @media (max-width: 767px) {
+      gap: 25px;
+      text-align: center;
+      flex-direction: column;
+    }
+  }
+
+  h2 {
+    color: white;
+    font-size: 2.4em;
+    max-width: 435px;
+    @media (min-width: 768px) {
+      font-size: 2.3em;
+    }
+  }
+}
